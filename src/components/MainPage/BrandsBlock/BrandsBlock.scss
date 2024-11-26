@@ -1,0 +1,22 @@
+@import '../../../assets/scss/colors';
+
+.brands-block {
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.brands-block-title {
+    font-size: 35px;
+    color: $dark-blue-crayola;
+}
+
+.brands {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 10px;
+}
+
+.brand-logo {
+    max-width: 280px;
+    max-height: 70px;
+}

@@ -1,0 +1,63 @@
+@import '../../assets/scss/colors';
+
+.basket-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 350px;
+    background-color: white;
+}
+
+.basket-sidebar-title {
+    display: flex;
+    padding: 20px;
+    background-color: $dark-blue-crayola;
+}
+
+.sidebar-close-button {
+    background-color: $dark-blue-crayola;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 60px;
+}
+
+.sidebar-title-text {
+    color: white;
+}
+
+.basket-products-card {
+    height: 65%;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.products-sum {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.products-sum h3, p {
+    font-size: 23px;
+    color: $gentian-blue;
+    margin: 5px;
+}
+
+.basket-page-open-button {
+    margin: 15px;
+    padding: 14px;
+    width: 90%;
+    color: white;
+    border: 1px solid white;
+    background-color: $dark-blue-crayola;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.basket-page-open-button:hover {
+    background-color: #1e69cb9f;
+    transition: 0.4s;
+}

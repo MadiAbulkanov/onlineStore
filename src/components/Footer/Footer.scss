@@ -1,0 +1,54 @@
+@import '../../assets/scss/colors';
+
+footer {
+    background-color: #e0e0e0;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-around;
+}
+
+.copyright-block {
+    background-color: $gentian-blue;
+    padding: 10px 60px;
+}
+
+.copyright-block p {
+    margin: 0;
+    color: white;
+    font-size: 14px;
+}
+
+.shop-section {
+    text-align: left;
+    margin: 40px auto;
+
+}
+
+.section-title {
+    font-style: italic;
+    margin-bottom: 25px;
+    color: $dark-blue-crayola;
+}
+
+.section-nav {
+    padding: 0;
+}
+
+.section-nav-link {
+    list-style: none;
+}
+
+.section-link {
+    text-decoration: none;
+}
+
+.section-link-text {
+    margin: 10px 0;
+    color: #494949;
+}
+
+.section-link-text:hover {
+    color: $gentian-blue;
+}

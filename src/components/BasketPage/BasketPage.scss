@@ -1,0 +1,67 @@
+@import '../../assets//scss//colors';
+
+.alert {
+    position: absolute;
+    top: 200px;
+    right: 0;
+}
+
+.basket-products-page {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 270px;
+    margin-bottom: 250px;
+}
+
+.order-list {
+    text-align: left;
+    width: 65%;
+}
+
+.basket-products-page-title, .order-details-title  {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 35px;
+    color: $dark-blue-crayola;
+}
+
+.order-products-list {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.order-details {
+    text-align: left;
+    width: 30%;
+}
+
+.order-details-title {
+    margin-bottom: 30px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total p {
+    margin: 5px;
+    padding-bottom: 5px;
+}
+
+.checkout-button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 25px;
+    color: white;
+    border: 1px solid white;
+    background-color: $dark-blue-crayola;
+}
+
+.checkout-button:hover {
+    background-color: #1e69cb9f;
+    transition: 0.4s;
+}

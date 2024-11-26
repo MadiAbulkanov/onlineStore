@@ -1,0 +1,82 @@
+@import '../../../assets/scss/colors';
+
+.content-block {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.content-block-2 {
+    width: 100%;
+    max-height: 350px;
+    display: flex;
+}
+
+.promo-card-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 30%;
+    background-color: $dark-blue-crayola;
+    color: white;
+    padding: 10px 30px;
+}
+
+.promo-card-title {
+    font-size: 40px;
+    text-align: left;
+    line-height: 1;
+}
+
+.promo-card-button {
+    width: 140px;
+    padding: 14px;
+    color: white;
+    border: 3px solid white;
+    background-color: $dark-blue-crayola;
+    border-radius: 25px;
+}
+
+.promo-card-button:hover {
+    color: $dark-blue-crayola;
+    background-color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.promo-card-img {
+    width: 70%;
+    object-fit: cover;
+}
+
+.promo-card-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $dark-blue-crayola;
+    width: 50%;
+    padding: 50px;
+    background: url(../../../assets/promo-img2.jpg) no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+.promo-card-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    width: 50%;
+    padding: 50px;
+    background: url(../../../assets/promo-img3.jpg) no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+.card-title {
+    width: 290px;
+    font-size: 30px;
+    text-align: left;
+    padding: 10px 5px;
+}

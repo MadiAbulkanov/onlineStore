@@ -1,0 +1,27 @@
+@import '../../../assets/scss/colors';
+
+.nav {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-link {
+    flex: 1;
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: aliceblue;
+    transition: 0.3s;
+}
+
+.link-text {
+    color: $gentian-blue;
+    text-transform: uppercase;
+    font-weight: 700;
+}

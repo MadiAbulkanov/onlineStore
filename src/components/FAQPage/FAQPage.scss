@@ -1,0 +1,41 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/variables';
+
+.faq-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+    margin-top: 230px;
+}
+
+.faq-page-title {
+    width: 100%;
+    background-color: $dark-blue-crayola;
+}
+
+.faq-page-title-text {
+    @include title-styles
+}
+
+.faq-section {
+    max-width: 900px;
+    margin: 0 auto;
+
+}
+.faq-section-subtitle {
+    color: #696969;
+    margin: 50px auto;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.accordion-question {
+    color: $dark-blue-crayola;
+    font-size: 18px;
+    font-style: italic;
+
+}
+
+.accordion-answer {
+    color: $gentian-blue;
+}

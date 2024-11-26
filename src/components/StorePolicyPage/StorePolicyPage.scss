@@ -1,0 +1,41 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/variables';
+
+.store-policy-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+    margin-top: 230px;
+}
+
+.store-policy-page-title {
+    width: 100%;
+    background-color: $dark-blue-crayola;
+}
+
+.store-policy-page-title-text {
+    @include title-styles
+}
+
+.store-policy-info-block {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.store-policy-info {
+    text-align: left;
+}
+
+.store-policy-info h3 {
+    color: $dark-blue-crayola;
+    font-style: italic;
+    font-size: 25px;
+}
+
+.store-policy-info p {
+    font-size: 16px;
+    color: #565656;
+    padding: 0;
+    margin: 2px;
+}
