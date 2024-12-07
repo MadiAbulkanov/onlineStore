@@ -6,20 +6,20 @@ import { useState } from 'react';
 import { Box, Modal } from '@mui/material';
 
 export function Layout() {
-    const [sidedarOpen, setSidedarOpen] = useState<boolean>(false);
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
-    const toggleOpen = () => {
-        setSidedarOpen(prevOpen => !prevOpen);
+    const toggleSidebar = () => {
+        setSidebarOpen(prevOpen => !prevOpen);
     };
 
     return (
         <>
-            <Header closeSidebar={toggleOpen} />
+            <Header closeSidebar={toggleSidebar} />
             <Outlet />
             <Footer />
-            <Modal open={sidedarOpen} onClose={toggleOpen}>
+            <Modal open={sidebarOpen} onClose={toggleSidebar}>
                 <Box>
-                    <BasketSidebar closeSidebar={toggleOpen}/>
+                    <BasketSidebar open={sidebarOpen} closeSidebar={toggleSidebar}/>
                 </Box>
             </Modal>
         </>

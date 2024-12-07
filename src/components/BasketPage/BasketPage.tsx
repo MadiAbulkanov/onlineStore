@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './BasketPage.scss';
 import { Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -6,54 +6,86 @@ import { OrderCard } from './OrderCard/OrderCard';
 import { useAppDispatch, useAppSelector } from '../../store/hook';
 import { removeFromAllBasket } from '../../store/slice/basket.slice';
 
-
 export const BasketPage = () => {
     const [orderSuccess, setOrderSuccess] = useState<boolean>(false);
+    const [orderError, setOrderError] = useState<boolean>(false);
     const navigate = useNavigate();
     const { basket } = useAppSelector((state) => state.basket);
     const dispatch = useAppDispatch();
+    const [totalSum, setTotalSum] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     const checkoutButtonHandler = () => {
-        setOrderSuccess(true);
+        if (basket.length > 0) {
+            setOrderSuccess(true);
 
-        setTimeout(() => {
-            setOrderSuccess(false);
-            dispatch(removeFromAllBasket());
-            navigate('/');
-        }, 900)
+            setTimeout(() => {
+                setOrderSuccess(false);
+                dispatch(removeFromAllBasket());
+                navigate('/');
+            }, 900)
+        } else {
+            setOrderError(true);
+
+            setTimeout(() => {
+                setOrderError(false);
+            }, 900)
+        }
     }
+
+    useEffect(() => {
+        if (basket.length > 0) {
+            const sum = basket.reduce((accumulator, product) => accumulator + product.price, 0);
+            const totPrice = sum + 2000;
+            setTotalSum(sum);
+            setTotalPrice(totPrice);
+        } else {
+            setTotalSum(0);
+            setTotalPrice(0);
+        }
+    }, [basket]);
 
     return (
         <>
-        {orderSuccess && (
-            <Alert className="alert" severity="success">Заказ успешно оформлен!</Alert>
-        )}
-        <div className="basket-products-page">
-            <div className="order-list">
-                <h3 className="basket-products-page-title">Моя корзина</h3>
-                <div className="order-products-list">
-                 {basket.map((product) => (
-                    <OrderCard key={product.id} product={product} />
-                ))}   
+            {orderSuccess && (
+                <Alert className="alert" severity="success">Заказ успешно оформлен!</Alert>
+            )}
+            {orderError && (
+                <Alert className="alert" severity="error">Ошибка оформления заказа!</Alert>
+            )}
+            {basket.length > 0 ? (
+                <div className="basket-products-page">
+                    <div className="order-list">
+                        <h3 className="basket-products-page-title">Моя корзина</h3>
+                        <div className="order-products-list">
+                            {basket.map((product) => (
+                                <OrderCard key={product.id} product={product} />
+                            ))}
+                        </div>
+                    </div>
+                    <div className="order-details">
+                        <h3 className="order-details-title">Детали заказа</h3>
+                        <div className="total">
+                            <p>Сумма</p>
+                            <p>{totalSum} тенге</p>
+                        </div>
+                        <div className="total">
+                            <p>Доставка</p>
+                            <p>2000 тенге</p>
+                        </div>
+                        <div className="total">
+                            <p>Итого</p>
+                            <p>{totalPrice} тенге</p>
+                        </div>
+                        <button className="checkout-button" onClick={checkoutButtonHandler}>Оформить заказ</button>
+                    </div>
                 </div>
-            </div>
-            <div className="order-details">
-                <h3 className="order-details-title">Детали заказа</h3>
-                <div className="total">
-                    <p>Сумма</p>
-                    <p>25000 тенге</p>
+            ) : (
+                <div className="basket-products-empty">
+                    <h2>Моя корзина</h2>
+                    <h3 className="empty-basket-text">Корзина пуста</h3>
                 </div>
-                <div className="total">
-                    <p>Доставка</p>
-                    <p>1000 тенге</p>
-                </div>
-                <div className="total">
-                    <p>Итого</p>
-                    <p>3500 тенге</p>
-                </div>
-                <button className="checkout-button" onClick={checkoutButtonHandler}>Оформить заказ</button>
-            </div>
-        </div>
+            )}
         </>
     )
 };

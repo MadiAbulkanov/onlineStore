@@ -1,4 +1,4 @@
-@import '../../../../assets/scss/colors';
+@use '../../../../assets/scss/colors' as colors;
 
 .product-info-page {
     max-width: 950px;
@@ -25,7 +25,7 @@
 }
 
 .product-info-name {
-    color:  $dark-blue-crayola;
+    color:  colors.$dark-blue-crayola;
     font-style: italic;
     font-size: 35px;
     margin: 5px auto;
@@ -58,7 +58,7 @@
     margin-top: 35px;
     color: white;
     border: 1px solid white;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
     border-radius: 25px;
     font-size: 15px;
 }
@@ -80,11 +80,12 @@
 }
 
 .general-info-block-title {
-    color:  $dark-blue-crayola;
+    color:  colors.$dark-blue-crayola;
     font-size: 20px;
     text-transform: uppercase;
 }
 
 .general-info-block-desc {
-    color:  $gentian-blue;
+    color:  colors.$gentian-blue;
+    font-size: 20px;
 }

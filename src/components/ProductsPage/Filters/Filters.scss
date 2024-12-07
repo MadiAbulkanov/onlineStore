@@ -1,4 +1,4 @@
-@import '../../../assets/scss/colors';
+@use '../../../assets/scss/colors' as colors;
 
 .css-1808mag-MuiPaper-root-MuiAccordion-root.Mui-expanded {
     margin: 0 !important;
@@ -33,7 +33,7 @@
     font-size: 15px !important;
     justify-content: flex-start !important;
     width: 100%;
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
 }
 
 .accordion-button:hover {

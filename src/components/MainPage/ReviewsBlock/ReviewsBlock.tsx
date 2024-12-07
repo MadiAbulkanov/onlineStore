@@ -1,4 +1,4 @@
-import { reviews } from '../../../helpers';
+import { reviews } from '../../../data/data';
 import { Review } from './Review/Review';
 import './ReviewsBlock.scss';
 

@@ -1,5 +1,5 @@
-@import '../../assets/scss/colors';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/colors' as colors;
+@use '../../assets/scss/variables' as vars;
 
 .contact-page {
     max-width: 1200px;
@@ -10,11 +10,11 @@
 
 .contact-page-title {
     width: 100%;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
 }
 
 .contact-page-title-text {
-    @include title-styles
+    @include vars.title-styles
 }
 
 .contact-page-form {
@@ -29,7 +29,7 @@
 
 .contact-page-form-title {
     font-style: italic;
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
     font-size: 27px;
 }
 
@@ -45,13 +45,13 @@ form input, textarea {
     width: 100%;
     margin: 4px 2px;
     padding: 10px;
-    color: $dark-blue-crayola;
-    border: 2px solid $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
+    border: 2px solid colors.$dark-blue-crayola;
     outline: none;
 }
 
 form input::placeholder, textarea::placeholder {
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
 }
 
 .input-name, .input-email {
@@ -62,13 +62,13 @@ form button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
     color: white;
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: $gentian-blue;
+    background-color: colors.$gentian-blue;
     transition: 0.5s;
 }
 
@@ -79,7 +79,7 @@ form button:hover {
     transform: translateX(-50%);
     width: 65%;
     object-fit: cover; 
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
     display: flex;
     align-items: center;
     padding: 15px;

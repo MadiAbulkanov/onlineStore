@@ -1,4 +1,4 @@
-@import '../../assets/scss/colors';
+@use '../../assets/scss/colors' as colors;
 
 header {
     position: fixed;
@@ -20,7 +20,7 @@ header {
 }
 
 .logo-name {
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
     margin: 0;
     text-align: left;
     font-style: italic;
@@ -29,7 +29,7 @@ header {
 
 .logo-text {
     color: white;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
     margin-top: 0;
     padding: 4px;
     width: 240px;
@@ -44,7 +44,7 @@ header {
 }
 
 .basket-logo {
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
 }
 
 .navigation-menu {

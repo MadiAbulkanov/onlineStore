@@ -1,4 +1,4 @@
-@import '../../assets//scss//colors';
+@use '../../assets/scss/colors' as colors;
 
 .alert {
     position: absolute;
@@ -15,6 +15,27 @@
     margin-bottom: 250px;
 }
 
+.basket-products-empty {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 270px;
+    margin-bottom: 250px;
+}
+
+.basket-products-empty h2 {
+    margin: 0px 60px;
+    color: colors.$dark-blue-crayola;
+    text-align: left;
+}
+
+.empty-basket-text {
+    color: #5b5b5b;
+    text-align: center;
+    margin-top: 200px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
 .order-list {
     text-align: left;
     width: 65%;
@@ -24,7 +45,7 @@
     font-size: 25px;
     font-weight: 300;
     margin-bottom: 35px;
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
 }
 
 .order-products-list {
@@ -58,7 +79,7 @@
     border-radius: 25px;
     color: white;
     border: 1px solid white;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
 }
 
 .checkout-button:hover {

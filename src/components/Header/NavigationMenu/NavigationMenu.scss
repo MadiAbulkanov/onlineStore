@@ -1,4 +1,4 @@
-@import '../../../assets/scss/colors';
+@use '../../../assets/scss/colors' as colors;
 
 .nav {
     display: flex;
@@ -21,7 +21,7 @@
 }
 
 .link-text {
-    color: $gentian-blue;
+    color: colors.$gentian-blue;
     text-transform: uppercase;
     font-weight: 700;
 }

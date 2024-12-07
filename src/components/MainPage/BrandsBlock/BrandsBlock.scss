@@ -1,4 +1,4 @@
-@import '../../../assets/scss/colors';
+@use '../../../assets/scss/colors' as colors;
 
 .brands-block {
     margin-top: 70px;
@@ -7,7 +7,7 @@
 
 .brands-block-title {
     font-size: 35px;
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
 }
 
 .brands {

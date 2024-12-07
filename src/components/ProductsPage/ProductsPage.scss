@@ -1,5 +1,5 @@
-@import '../../assets/scss/colors';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/colors' as colors;
+@use '../../assets/scss/variables' as vars;
 
 .products-page {
     max-width: 1200px;
@@ -9,11 +9,11 @@
 
 .products-page-title {
     width: 100%;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
 }
 
 .products-page-title-text {
-    @include title-styles
+    @include vars.title-styles
 }
 
 .products-section {

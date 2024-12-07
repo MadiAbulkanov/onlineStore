@@ -1,5 +1,5 @@
-@import '../../assets/scss/colors';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/colors' as colors;
+@use '../../assets/scss/variables' as vars;
 
 .delivery-page {
     max-width: 1200px;
@@ -10,11 +10,11 @@
 
 .delivery-page-title {
     width: 100%;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
 }
 
 .delivery-page-title-text {
-    @include title-styles
+    @include vars.title-styles
 }
 
 .delivery-info-block {
@@ -30,7 +30,7 @@
 }
 
 .delivery-info h3 {
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
     font-style: italic;
     font-size: 25px;
 

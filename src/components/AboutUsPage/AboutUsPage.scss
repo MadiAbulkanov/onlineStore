@@ -1,5 +1,5 @@
-@import '../../assets/scss/colors';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/colors' as colors;
+@use '../../assets/scss/variables' as vars;
 
 .about-us-page {
     max-width: 1200px;
@@ -10,11 +10,11 @@
 
 .about-us-page-title {
     width: 100%;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
 }
 
 .about-us-page-title-text {
-    @include title-styles
+    @include vars.title-styles
 }
 
 .about-us-desc {

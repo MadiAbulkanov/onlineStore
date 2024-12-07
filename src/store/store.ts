@@ -13,7 +13,14 @@ const persistedReducer = persistReducer(persistConfig, basketReducer);
 export const store = configureStore({
   reducer: {
     basket: persistedReducer,
-}});
+  },
+  middleware: getDefaultMiddleware => 
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ['persist/PERSIST'],
+      },
+    }),
+});
 
 const persistor = persistStore(store);
 

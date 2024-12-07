@@ -1,5 +1,5 @@
-@import '../../assets/scss/colors';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/colors' as colors;
+@use '../../assets/scss/variables' as vars;
 
 .store-policy-page {
     max-width: 1200px;
@@ -10,11 +10,11 @@
 
 .store-policy-page-title {
     width: 100%;
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
 }
 
 .store-policy-page-title-text {
-    @include title-styles
+    @include vars.title-styles
 }
 
 .store-policy-info-block {
@@ -28,7 +28,7 @@
 }
 
 .store-policy-info h3 {
-    color: $dark-blue-crayola;
+    color: colors.$dark-blue-crayola;
     font-style: italic;
     font-size: 25px;
 }

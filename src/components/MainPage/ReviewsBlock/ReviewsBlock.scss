@@ -1,7 +1,7 @@
-@import '../../../assets/scss/colors';
+@use '../../../assets/scss/colors' as colors;
 
 .reviews-block {
-    background-color: $dark-blue-crayola;
+    background-color: colors.$dark-blue-crayola;
     padding: 60px 40px;
 }
 
@@ -10,7 +10,6 @@
     color: white;
     margin: 0;
     font-style: italic;
-
 }
 
 .reviews {

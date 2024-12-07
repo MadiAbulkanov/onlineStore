@@ -5,7 +5,7 @@ import './ProductsPage.scss';
 import { useInView } from 'react-intersection-observer';
 import { Filters } from './Filters/Filters';
 import { FilterItems } from '../../interfaces/IFilterItems.interface';
-import { filterByBrand } from '../../helpers';
+import { filterByBrand } from '../../data/data';
 
 export const ProductsPage = ({ products, blockTitle, filterByType }: { products: ProductCardProps[], blockTitle: string, filterByType: FilterItems }) => {
 
@@ -15,6 +15,7 @@ export const ProductsPage = ({ products, blockTitle, filterByType }: { products:
 
     useEffect(() => {
         setVisibleProducts(products.slice(0, productsPerPage));
+        setCurrentPage(1);
     }, [products]);
 
     const loadMoreProducts = () => {
