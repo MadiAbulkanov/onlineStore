@@ -1,1 +1,1 @@
-# React + TypeScript + Vite
+# Online drone store
