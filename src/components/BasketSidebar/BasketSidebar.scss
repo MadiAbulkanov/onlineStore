@@ -1,6 +1,9 @@
 @use '../../assets/scss/colors' as colors;
 
 .basket-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     right: 0;
@@ -37,7 +40,7 @@
 }
 
 .basket-products-card {
-    height: 65%;
+    // height: 65%;
     padding: 10px;
     overflow-y: auto;
 }

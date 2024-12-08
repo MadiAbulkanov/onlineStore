@@ -39,11 +39,13 @@ export const BasketSidebar = ({ closeSidebar, open }: SetSidebarOpen) => {
                 ))}
                 {basket.length < 1 && <h3>Корзина пуста</h3>}
             </div>
+            <div>
             <div className="products-sum">
                 <h3>Сумма</h3>
                 <p>{totalPrice} тенге</p>
             </div>
             <button className="basket-page-open-button" onClick={navigateToBasket}>Смотреть корзину</button>
+            </div>
         </div>
     )
 };
