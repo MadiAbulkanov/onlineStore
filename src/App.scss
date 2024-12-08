@@ -1,4 +1,10 @@
 #root {
   margin: 0 auto;
   text-align: center;
+
+  font-family: Nunito, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

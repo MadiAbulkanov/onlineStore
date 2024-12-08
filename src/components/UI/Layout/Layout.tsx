@@ -4,6 +4,7 @@ import { Footer } from '../../Footer/Footer';
 import { BasketSidebar } from '../../BasketSidebar/BasketSidebar';
 import { useState } from 'react';
 import { Box, Modal } from '@mui/material';
+import './Layout.scss';
 
 export function Layout() {
     const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
@@ -15,7 +16,9 @@ export function Layout() {
     return (
         <>
             <Header closeSidebar={toggleSidebar} />
-            <Outlet />
+            <div className="content">
+                <Outlet />
+            </div>
             <Footer />
             <Modal open={sidebarOpen} onClose={toggleSidebar}>
                 <Box>

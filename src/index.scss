@@ -1,10 +1,6 @@
-:root {
-  font-family: Nunito, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
-
 body {
   margin: 0;
-  overflow: scroll !important;
+  overflow:auto !important;
   padding-right: 0 !important;
+  height: 100%;
 }
