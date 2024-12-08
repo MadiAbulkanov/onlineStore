@@ -11,6 +11,7 @@ export const Filters = ({ filterByType, filterByBrand }: { filterByType: FilterI
     const handlePriceChange = (event: Event, newValue: number | number[]) => {
         setPriceRange(newValue as number[]);
         console.log(newValue);
+        console.log(event.target);
     };
 
     const filterChange = (event: React.MouseEvent<HTMLElement>) => {
