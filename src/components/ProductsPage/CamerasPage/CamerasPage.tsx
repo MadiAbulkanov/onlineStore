@@ -10,7 +10,7 @@ import { useGetProductsQuery } from '../../../store/api/store.api';
 import boxIcon from '../../../assets/icon-box.png';
 
 export const CamerasPage = () => {
-    const [filters, setFilters] = useState({ type: 'camera', brand: '', prodClass: '' });
+    const filters = { type: 'camera', brand: '', prodClass: '' };
     const { data } = useGetProductsQuery(filters);
     const products = data || [];   
 

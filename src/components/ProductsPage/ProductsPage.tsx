@@ -10,8 +10,7 @@ import { useGetProductsQuery } from '../../store/api/store.api';
 import boxIcon from '../../assets/icon-box.png';
 
 export const ProductsPage = () => {
-    const [filters, setFilters] = useState({ type: '', brand: '', prodClass: '' });
-
+    const filters = { type: '', brand: '', prodClass: '' };
     const { data } = useGetProductsQuery(filters);
     const products = data || [];   
 
