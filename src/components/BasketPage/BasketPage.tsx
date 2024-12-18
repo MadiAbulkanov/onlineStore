@@ -35,7 +35,9 @@ export const BasketPage = () => {
 
     useEffect(() => {
         if (basket.length > 0) {
-            const sum = basket.reduce((accumulator, product) => accumulator + product.price, 0);
+            const sum = basket.reduce((accumulator, product) => {
+                return accumulator + (product.price * product.quant);
+            }, 0);
             const totPrice = sum + 2000;
             setTotalSum(sum);
             setTotalPrice(totPrice);

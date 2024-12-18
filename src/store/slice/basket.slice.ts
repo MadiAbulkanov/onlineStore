@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ProductCardProps } from '../../interfaces/IProducts.interface';
+import { IProd } from '../../interfaces/IProducts.interface';
+// import { ProductCardProps } from '../../interfaces/IProducts.interface';
 
 interface basketSlice {
-    basket: ProductCardProps[];
+    basket: IProd[];
 }
 
 const initialState: basketSlice = {
@@ -13,8 +14,14 @@ const basketSlice = createSlice({
     name: 'basket',
     initialState,
     reducers: {
-        addToBasket(state, action: PayloadAction<ProductCardProps>) {
-            state.basket.push(action.payload);
+        addToBasket(state, action: PayloadAction<IProd>) {
+            const existingProduct = state.basket.find(product => product.id === action.payload.id);
+
+            if(existingProduct) {
+                existingProduct.quant = action.payload.quant;
+            } else {
+                state.basket.push(action.payload);
+            }
         },
         removeFromBasket(state, action: PayloadAction<number>) {
             state.basket = state.basket.filter(item => item.id !== action.payload);

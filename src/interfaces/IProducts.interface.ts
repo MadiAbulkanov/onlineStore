@@ -1,7 +1,14 @@
+export interface IProduct {
+    id: number;
+    name: string;
+    price: number;
+    type: string;
+    brand: string;
+    image?: string;
+    topSeller: boolean;
+    newProd: boolean;
+}
 
-export interface ProductCardProps {
-    id: number, 
-    name: string, 
-    image: string,
-    price: number
-};
+export interface IProd extends IProduct {
+    quant: number;
+}

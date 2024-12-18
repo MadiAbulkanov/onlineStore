@@ -1,8 +1,8 @@
-import { ProductCardProps } from '../../../interfaces/IProducts.interface';
+import { IProduct } from '../../../interfaces/IProducts.interface';
 import { ProductCard } from './ProductCard/ProductCard';
 import './ProductsBlock.scss';
 
-export const ProductsBlock = ({ products, blockTitle }:{ products: ProductCardProps[], blockTitle: string }) => {
+export const ProductsBlock = ({ products, blockTitle }:{ products: IProduct[], blockTitle: string }) => {
     return (
         <>
             <div className="products-block">

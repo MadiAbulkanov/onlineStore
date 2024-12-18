@@ -21,7 +21,10 @@ export const BasketSidebar = ({ closeSidebar, open }: SetSidebarOpen) => {
     };
 
     useEffect(() => {
-        const totPrice = basket.reduce((accumulator, product) => accumulator + product.price, 0);
+        const totPrice = basket.reduce((accumulator, product) => {
+            return accumulator + (product.price * product.quant);
+        }, 0);
+
         setTotalPrice(totPrice);
     }, [basket])
 
