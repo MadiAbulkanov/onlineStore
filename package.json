@@ -1,0 +1,16 @@
+{
+  "name": "onlinestore",
+  "version": "1.0.0",
+  "description": "Этот проект представляет собой онлайн-магазин дронов, позволяющий пользователям просматривать, сравнивать и добавлять в корзину различные модели дронов.",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server",
+    "dev": "concurrently --kill-others-on-fail --prefix-colors \"bgBlue.bold,bgGreen.bold\" \"npm run dev --prefix=server\" \"npm run dev --prefix=client\"",
+    "start": "npm run install:all && npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
