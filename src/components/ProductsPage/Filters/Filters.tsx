@@ -1,10 +1,11 @@
-import { Accordion, AccordionSummary, AccordionDetails, Button, FormControlLabel, Checkbox, Slider } from '@mui/material';
+import { Accordion, AccordionSummary, AccordionDetails, Button, Slider } from '@mui/material';
 import './Filters.scss';
 import { FilterItems } from '../../../interfaces/IFilterItems.interface';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 
-export const Filters = ({ filterByType, filterByBrand }: { filterByType: FilterItems, filterByBrand: FilterItems }) => {
+export const Filters = ({ filterByBrand, typeSelectionHandler, brandSelectionHandler }: { filterByBrand: FilterItems, typeSelectionHandler: (val: string) => void, brandSelectionHandler: (val: string) => void }) => {
+    const types = ["Все", "Лидеры продаж", "Новинки", "Распродажа"];
 
     const [priceRange, setPriceRange] = useState<number[]>([0, 900000]);
 
@@ -15,14 +16,23 @@ export const Filters = ({ filterByType, filterByBrand }: { filterByType: FilterI
     };
 
     const filterChange = (event: React.MouseEvent<HTMLElement>) => {
-        const selectType = event.currentTarget.textContent
-        console.log(selectType);
-    }
+        const selectType = event.currentTarget.textContent;
+        if(selectType === 'Все') typeSelectionHandler('');
+        if(selectType === 'Лидеры продаж') typeSelectionHandler('topSeller');
+        if(selectType === 'Новинки') typeSelectionHandler('newProd');
+        if(selectType === 'Распродажа') typeSelectionHandler('sale');
+    };
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const selectType = event.target.name
-        console.log(selectType);
-    }
+    const handleChange = (event: React.MouseEvent<HTMLElement>) => {
+        const selectBrand = event.currentTarget.textContent;
+        if(selectBrand) {
+            if(selectBrand  === 'Все') {
+                brandSelectionHandler('');
+            } else {
+                brandSelectionHandler(selectBrand);
+            }
+        }
+    };
 
     return (
         <div className="filters">
@@ -30,9 +40,9 @@ export const Filters = ({ filterByType, filterByBrand }: { filterByType: FilterI
             <div className="accordion-section">
                 <Accordion>
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <h4>{filterByType.title}</h4>
+                        <h4>Тип товара</h4>
                     </AccordionSummary>
-                    {filterByType.types.map((itemType, index) => (
+                    {types.map((itemType, index) => (
                         <AccordionDetails key={index} className="accordion-details">
                             <Button className="accordion-button" variant='text' onClick={filterChange}>{itemType}</Button>
                         </AccordionDetails>
@@ -44,16 +54,7 @@ export const Filters = ({ filterByType, filterByBrand }: { filterByType: FilterI
                     </AccordionSummary>
                     {filterByBrand.types.map((itemType, index) => (
                         <AccordionDetails key={index} className="accordion-details">
-                            <FormControlLabel className="accordion-button"
-                                control={
-                                    <Checkbox
-                                        onChange={handleChange}
-                                        name={itemType}
-                                        color="primary"
-                                    />
-                                }
-                                label={itemType}
-                            />
+                            <Button className="accordion-button" variant='text' onClick={handleChange}>{itemType}</Button>
                         </AccordionDetails>
                     ))}
                 </Accordion>

@@ -4,13 +4,12 @@ import './ProductsPage.scss';
 import { useInView } from 'react-intersection-observer';
 import { Filters } from './Filters/Filters';
 import { filterByBrand } from '../../data/data';
-import { filterByTypes } from '../../data/data';
 import { IProduct } from '../../interfaces/IProducts.interface';
 import { useGetProductsQuery } from '../../store/api/store.api';
 import boxIcon from '../../assets/icon-box.png';
 
 export const ProductsPage = () => {
-    const filters = { type: '', brand: '', prodClass: '' };
+    const [filters, setFilters] = useState({ type: '', brand: '', prodClass: '' });
     const { data } = useGetProductsQuery(filters);
     const products = data || [];   
 
@@ -45,6 +44,14 @@ export const ProductsPage = () => {
         }
     }, [inView]);
 
+    const typeSelectionHandler = (val: string) => {
+        setFilters((prevFilters) => ({ ...prevFilters, prodClass: val }));
+    };
+
+    const brandSelectionHandler = (val: string) => {
+        setFilters((prevFilters) => ({ ...prevFilters, brand: val }));
+    };
+
 
     return (
         <div className="products-page">
@@ -52,7 +59,7 @@ export const ProductsPage = () => {
                 <h1 className="products-page-title-text">Все товары</h1>
             </div>
             <div className="products-section">
-                <Filters filterByType={filterByTypes} filterByBrand={filterByBrand} />
+                <Filters filterByBrand={filterByBrand} typeSelectionHandler={typeSelectionHandler} brandSelectionHandler={brandSelectionHandler} />
                 <div className="products all-products">
                     {visibleProducts.map((product, index) => (
                         <div key={product.id} className='fade-in'>
