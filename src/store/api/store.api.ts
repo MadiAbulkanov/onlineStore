@@ -4,7 +4,7 @@ import { IProduct } from '../../interfaces/IProducts.interface';
 export const storeApi = createApi({
     reducerPath: 'storeApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:8000/',
+        baseUrl: import.meta.env.VITE_BASE_URL,
     }),
     endpoints: build => ({
         getProducts: build.query<IProduct[], { type?: string, brand?: string, prodClass?: string }>({
