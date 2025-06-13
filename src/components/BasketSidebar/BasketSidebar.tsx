@@ -1,9 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { BasketProductCard } from './BasketProductCard/BasketProductCard';
-import './BasketSidebar.scss';
-import { useAppSelector } from '../../store/hook';
+import { BasketProductCard } from './BasketProductCard/BasketProductCard.tsx';
 import { BsChevronRight } from "react-icons/bs";
 import { useEffect, useState } from 'react';
+import { useAppSelector } from '../../hooks/useAppSelector.ts';
 
 interface SetSidebarOpen {
     closeSidebar: () => void;
@@ -43,11 +42,11 @@ export const BasketSidebar = ({ closeSidebar, open }: SetSidebarOpen) => {
                 {basket.length < 1 && <h3>Корзина пуста</h3>}
             </div>
             <div>
-            <div className="products-sum">
-                <h3>Сумма</h3>
-                <p>{totalPrice} тенге</p>
-            </div>
-            <button className="basket-page-open-button" onClick={navigateToBasket}>Смотреть корзину</button>
+                <div className="products-sum">
+                    <h3>Сумма</h3>
+                    <p>{totalPrice} тенге</p>
+                </div>
+                <button className="button basket-page-open-button" onClick={navigateToBasket}>Смотреть корзину</button>
             </div>
         </div>
     )

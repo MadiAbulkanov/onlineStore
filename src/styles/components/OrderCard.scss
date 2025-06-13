@@ -1,0 +1,45 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.order-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 5px;
+
+    .order-card-img {
+        width: 15%;
+        margin-right: 20px;
+    }
+
+    .order-product-info {
+        width: 40%;
+        margin-right: 20px;
+
+        .order-product-name {
+            font-size: 20px;
+        }
+
+        .order-product-price {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+
+    .order-product-quant {
+        width: 7%;
+        margin-right: 40px;
+    }
+
+    .order-product-sum {
+        width: 15%;
+        font-size: 17px;
+        margin-right: 30px;
+    }
+
+    .delet-product-button {
+        background-color: $c-button;
+        border: none;
+        cursor: pointer;
+    }
+}

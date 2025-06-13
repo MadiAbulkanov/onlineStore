@@ -1,0 +1,19 @@
+@use "../../settings/index" as *;
+@use "../../tools/index" as *;
+
+footer {
+    background-color: $c-footer-bg;
+
+    .footer-sections {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .copyright-block {
+        background-color: $c-copyright-block-bg;
+        padding: 10px 60px;
+        margin: 0;
+        color: $c-copyright-block-text;
+        font-size: 14px;
+    }
+}

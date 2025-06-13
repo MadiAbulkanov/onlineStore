@@ -1,0 +1,35 @@
+@use "../settings" as *;
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+
+  font-family: Nunito, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  overflow:auto !important;
+  padding-right: 0 !important;
+  height: 100%;
+}
+
+.button {
+  color: $c-button;
+  background-color: $c-button-bg;
+  border: 1px solid $c-button;
+  border-radius: 25px;
+  padding: 12px;
+  font-size: 15px;
+
+  &:hover {
+    background-color: $c-button-hover-bg;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
+

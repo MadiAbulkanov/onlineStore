@@ -1,0 +1,53 @@
+@use "../../settings/index" as *;
+@use "../../tools/index" as *;
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: $c-header-bg;
+    z-index: 1;
+
+    .header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px;
+
+        .header-link {
+            text-decoration: none;
+
+            .logo-name {
+                color: $c-logo;
+                margin: 0;
+                text-align: left;
+                font-style: italic;
+                font-size: 40px;
+            }
+
+            .logo-text {
+                color: $c-logo-text;
+                background-color: $c-logo;
+                margin-top: 0;
+                padding: 4px;
+                width: 240px;
+                text-align: left;
+                font-size: 20px;
+            }
+        }
+
+        .basket {
+            background-color: $c-basket;
+            border: none;
+            cursor: pointer;
+
+            .basket-logo {
+                color: $c-logo;
+            }
+        }
+    }
+
+    .navigation-menu {
+        background-color: $c-nav-menu-bg;
+    }
+}

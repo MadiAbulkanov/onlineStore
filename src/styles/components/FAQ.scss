@@ -1,0 +1,24 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.faq-section {
+    max-width: 900px;
+    margin: 0 auto;
+
+    .faq-section-subtitle {
+        color: $c-faq-section;
+        margin: 50px auto;
+        font-size: 20px;
+        font-style: italic;
+    }
+}
+
+.accordion-question {
+    color: $c-accordion-text;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.accordion-answer {
+    color: $c-text;
+}

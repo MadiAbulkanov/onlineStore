@@ -1,0 +1,45 @@
+@use "../../settings" as *;
+@use "../../tools" as *;
+
+.content-block {
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+
+.brands-block {
+  h1 {
+    font-size: 35px;
+    color: $c-main-text;
+  }
+}
+
+.reviews-block {
+  background-color: $c-reviews-block-bg;
+  padding: 60px 40px;
+
+  h1 {
+    color: white;
+    margin: 0;
+    font-style: italic;
+  }
+}
+
+.content-block-title {
+  font-size: 50px;
+  color: $c-text;
+}
+
+.contents {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 10px;
+}
+
+.products {
+  justify-content: center;
+}
+
+.brand-logo {
+  max-width: 280px;
+  max-height: 70px;
+}

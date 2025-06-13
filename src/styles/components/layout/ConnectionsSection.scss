@@ -1,0 +1,15 @@
+@use "../../settings/index" as *;
+@use "../../tools/index" as *;
+
+.connection-section-link-text {
+    margin: 10px 0;
+    color: $c-link;
+    font-size: 16px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}

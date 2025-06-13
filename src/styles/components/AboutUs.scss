@@ -1,0 +1,25 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.about-us-desc {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    background-color: $c-about-us-bg;
+    position: relative;
+
+    p {
+        margin: 15px auto;
+        width: 600px;
+        font-size: 16px;
+        color: $c-about-us-text;
+    }
+
+    .about-us-image {
+        position: absolute;
+        top: 350px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 65%;
+        object-fit: cover;
+    }
+}

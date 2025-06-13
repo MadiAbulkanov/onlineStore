@@ -1,11 +1,10 @@
 import { Input } from '@mui/material';
-import './OrderCard.scss';
 import { BsTrashFill } from "react-icons/bs";
-import { addToBasket, removeFromBasket } from '../../../store/slice/basket.slice';
-import { useAppDispatch } from '../../../store/hook';
-import { IProd } from '../../../interfaces/IProducts.interface';
 import noImage from '../../../assets/No_Image.jpg';
 import { useState } from 'react';
+import { IProd } from '../../../types/IProducts.interface';
+import { useAppDispatch } from '../../../hooks/useAppDispatch';
+import { addToBasket, removeFromBasket } from '../../../store/slice/basket';
 
 export const OrderCard = ({ product }: { product: IProd }) => {
     const dispatch = useAppDispatch();
@@ -20,9 +19,9 @@ export const OrderCard = ({ product }: { product: IProd }) => {
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
-        if(Number(value) > 0) {
-           setProd({ ...prod, quant: Number(value) }); 
-           dispatch(addToBasket(prod));
+        if (Number(value) > 0) {
+            setProd({ ...prod, quant: Number(value) });
+            dispatch(addToBasket(prod));
         }
     };
 

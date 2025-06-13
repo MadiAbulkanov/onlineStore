@@ -1,0 +1,84 @@
+@use "../../settings" as *;
+@use "../../tools" as *;
+
+.product-info-page {
+    max-width: 950px;
+    margin: 70px auto;
+    overflow: hidden;
+    margin-top: 230px;
+}
+
+.product-info-section {
+    display: flex;
+}
+
+.product-image-block {
+    width: 50%;
+
+    .product-image {
+        width: 350px;
+    }
+}
+
+.product-info-block {
+    width: 50%;
+    text-align: left;
+
+    .product-info-name {
+        color:  $c-main-text;
+        font-style: italic;
+        font-size: 35px;
+        margin: 5px auto;
+    }
+
+    .product-info-article {
+        margin: 0;
+        color: $c-product-info-article;
+    }
+
+    .product-info-price {
+        color: $c-product-info-price;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .product-info-desc {
+        font-size: 18px;
+    }
+
+    .product-quant-input {
+        width: 80px;
+        padding: 5px;
+        border: 1px solid $c-product-input-bg;
+    }
+
+    .product-add-button {
+        width: 86%;
+        margin-top: 35px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.general-info-section {
+    display: flex;
+    margin-top: 120px;
+
+    .general-info-block {
+        text-align: left;
+        margin: 0px 10px;
+    }
+
+    .general-info-block-title {
+        color:  $c-main-text;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .general-info-block-desc {
+        color:  $c-text;
+        font-size: 20px;
+    }
+}

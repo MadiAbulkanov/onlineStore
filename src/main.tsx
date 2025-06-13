@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import './index.scss'
-import App from './App.tsx'
+import './styles/index.scss'
+import App from './components/App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { persistor, store } from './store/store.ts'

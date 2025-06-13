@@ -1,0 +1,52 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.products-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 230px;
+
+  .products-page-title {
+    @include title-styles;
+    width: 100%;
+    background-color: $c-products-page-title;
+  }
+
+  .products-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .all-products {
+      flex-wrap: wrap;
+      width: 75%;
+
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(80px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .box-icon {
+        max-width: 300px;
+        max-height: 350px;
+        margin: 50px;
+      }
+    }
+  }
+}
+
+.filter {
+  border: 1px solid;
+  width: 25%;
+}

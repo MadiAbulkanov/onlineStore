@@ -1,6 +1,5 @@
-import { IProd } from '../../../interfaces/IProducts.interface';
-import './BasketProductCard.scss';
 import noImage from '../../../assets/No_Image.jpg';
+import { IProd } from '../../../types/IProducts.interface';
 
 export const BasketProductCard = ({ product }: { product: IProd }) => {
 
@@ -19,9 +18,7 @@ export const BasketProductCard = ({ product }: { product: IProd }) => {
                 <p className="basket-product-name">{product.name}</p>
                 <p className="basket-product-price">{product.price} тенге</p>
             </div>
-            <div>
-                <p className="basket-product-quantity">{product.quant} шт</p>
-            </div>
+            <p className="basket-product-quantity">{product.quant} шт</p>
         </div>
     )
 };

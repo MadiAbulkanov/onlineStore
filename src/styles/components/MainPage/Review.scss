@@ -1,0 +1,17 @@
+@use "../../settings" as *;
+@use "../../tools" as *;
+
+.review-card {
+    max-width: 260px;
+    margin-top: 40px;
+
+    .review-text {
+        color: $c-review-text;
+        font-weight: 100;
+        font-size: 19px;
+    }
+
+    .review-author {
+        color: $c-review-author;
+    }
+}

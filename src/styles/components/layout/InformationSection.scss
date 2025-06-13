@@ -1,0 +1,35 @@
+@use "../../settings/index" as *;
+@use "../../tools/index" as *;
+
+.shop-section {
+  text-align: left;
+  margin: 40px auto;
+
+  .section-title {
+    font-style: italic;
+    margin-bottom: 25px;
+    color: $c-section-title;
+  }
+
+  .section-nav {
+    padding: 0;
+
+    .section-nav-link {
+      list-style: none;
+    }
+
+    .section-link {
+      text-decoration: none;
+
+      .section-link-text {
+        margin: 10px 0;
+        color: $c-link;
+        font-size: 16px;
+      }
+
+      .section-link-text:hover {
+        color: $c-link-hover;
+      }
+    }
+  }
+}

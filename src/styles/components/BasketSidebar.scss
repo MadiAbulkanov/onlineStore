@@ -1,0 +1,68 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.basket-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 350px;
+    background-color: $c-basket-sidebar-bg;
+    transform: translateX(90%);
+    transition: transform 1s ease-in-out;
+    box-shadow: -2px 0 10px $c-basket-sidebar-box-shadow;
+}
+
+.basket-sidebar.open {
+    transform: translateX(0);
+}
+
+.basket-sidebar-title {
+    display: flex;
+    padding: 20px;
+    background-color: $c-basket-sidebar-title;
+
+    .sidebar-close-button {
+        background-color: $c-button-bg;
+        color: $c-button;
+        font-weight: 700;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        margin-right: 60px;
+    }
+
+    .sidebar-title-text {
+        color: $c-basket-sidebar-text;
+    }
+}
+
+.basket-products-card {
+    height: 65%;
+    padding: 10px;
+    overflow-y: auto;
+
+    h3 {
+        text-align: center;
+        font-weight: 400;
+    }
+}
+
+.products-sum {
+    padding: 10px;
+    margin-bottom: 20px;
+
+    h3, p {
+        font-size: 23px;
+        color: $c-products-sum-text;
+        margin: 5px;
+    }
+}
+
+.basket-page-open-button {
+    margin: 15px;
+    width: 90%;
+}

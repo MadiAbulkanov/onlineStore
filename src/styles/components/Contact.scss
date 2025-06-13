@@ -1,0 +1,90 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.contact-page-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 120px;
+    background-color: $c-contact-page-form;
+    position: relative;
+
+    .contact-page-form-title {
+        font-style: italic;
+        color: $c-contact-page-text;
+        font-size: 27px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 600px;
+
+        input, textarea {
+            width: 100%;
+            margin: 4px 2px;
+            padding: 10px;
+            color: $c-contact-page-text;
+            border: 2px solid $c-contact-page-text;
+            outline: none;
+
+            &::placeholder {
+                color: $c-contact-page-text;
+            }
+        }
+
+        .input-name, .input-email {
+            width: 45%;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: $c-button-bg;
+            color: $c-button;
+
+            &:hover {
+                background-color: $c-bright-blue;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.contact-information-block {
+    position: absolute;
+    top: 530px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    object-fit: cover;
+    background-color: $c-contact-info-block;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+
+    .contact-information-title {
+        color: $c-contact-info-text;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 40px;
+        text-align: left;
+        margin-left: 60px;
+    }
+
+    .contact-information {
+        width: 50%;
+
+        .contact-information-text {
+            color: $c-contact-info-text;
+            text-align: left;
+            padding: 0;
+            margin: 3px;
+        }
+    }
+}

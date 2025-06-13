@@ -1,0 +1,33 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.basket-product-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid $c-card-border;
+    margin: 10px 5px;
+
+    .basket-product-info {
+        width: 50%;
+    }
+}
+
+.basket-product-img {
+    max-width: 100px;
+    margin: 3px;
+}
+
+.basket-product-info {
+    .basket-product-name {
+        font-size: 15px;
+    }
+
+    .basket-product-price {
+        font-size: 15px;
+        font-weight: 700;
+    }
+}
+
+.basket-product-quantity {
+    font-size: 14px;
+}

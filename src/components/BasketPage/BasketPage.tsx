@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import './BasketPage.scss';
 import { Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { OrderCard } from './OrderCard/OrderCard';
-import { useAppDispatch, useAppSelector } from '../../store/hook';
-import { removeFromAllBasket } from '../../store/slice/basket.slice';
+import { OrderCard } from './OrderCard/OrderCard.tsx';
+import { useAppSelector } from '../../hooks/useAppSelector.ts';
+import { useAppDispatch } from '../../hooks/useAppDispatch.ts';
+import { removeFromAllBasket } from '../../store/slice/basket.ts';
 
 export const BasketPage = () => {
     const [orderSuccess, setOrderSuccess] = useState<boolean>(false);
@@ -79,7 +79,7 @@ export const BasketPage = () => {
                             <p>Итого</p>
                             <p>{totalPrice} тенге</p>
                         </div>
-                        <button className="checkout-button" onClick={checkoutButtonHandler}>Оформить заказ</button>
+                        <button className="button checkout-button" onClick={checkoutButtonHandler}>Оформить заказ</button>
                     </div>
                 </div>
             ) : (

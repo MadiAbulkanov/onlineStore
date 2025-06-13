@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import basketReducer from './slice/basket.slice';
+import basketReducer from './slice/basket.ts';
 import storage from 'redux-persist/lib/storage'
 import { persistReducer, persistStore } from 'redux-persist';
 import { storeApi } from './api/store.api';
@@ -16,7 +16,7 @@ export const store = configureStore({
     basket: persistedReducer,
     [storeApi.reducerPath]: storeApi.reducer,
   },
-  middleware: getDefaultMiddleware => 
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: ['persist/PERSIST'],
@@ -28,5 +28,4 @@ const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-export type AppStore = typeof store;
 export { persistor };
