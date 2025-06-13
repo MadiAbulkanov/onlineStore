@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import { BasketProductCard } from './BasketProductCard/BasketProductCard.tsx';
 import { BsChevronRight } from "react-icons/bs";
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useAppSelector } from '../../hooks/useAppSelector.ts';
 
-interface SetSidebarOpen {
+interface BasketSidebarProps {
     closeSidebar: () => void;
     open: boolean;
 }
 
-export const BasketSidebar = ({ closeSidebar, open }: SetSidebarOpen) => {
+export const BasketSidebar: FC<BasketSidebarProps> = ({ closeSidebar, open }) => {
     const navigate = useNavigate();
     const { basket } = useAppSelector((state) => state.basket);
     const [totalPrice, setTotalPrice] = useState(0);
