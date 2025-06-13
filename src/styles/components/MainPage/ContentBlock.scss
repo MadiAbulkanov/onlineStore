@@ -2,11 +2,11 @@
 @use "../../tools" as *;
 
 .content-block {
-  margin-top: 70px;
   margin-bottom: 10px;
 }
 
 .brands-block {
+  margin-top: 70px;
   h1 {
     font-size: 35px;
     color: $c-main-text;
