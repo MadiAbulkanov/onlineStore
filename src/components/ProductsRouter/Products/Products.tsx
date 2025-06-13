@@ -25,6 +25,10 @@ export const Products: FC<ProductsProps> = ({ config }) => {
     setCurrentPage(1);
   }, [data]);
 
+  useEffect(() => {
+    setFilters({ type: config.filtersType, brand: '', prodClass: '' })
+  }, [config.filtersType]);
+
   const loadMoreProducts = () => {
     const nextPage = currentPage + 1;
     const startIndex = (nextPage - 1) * productsPerPage;

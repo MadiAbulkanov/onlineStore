@@ -7,14 +7,13 @@ export const storeApi = createApi({
         baseUrl: import.meta.env.VITE_BASE_URL,
         mode: 'cors',
     }),
+    refetchOnMountOrArgChange: true,
     endpoints: build => ({
         getProducts: build.query<IProduct[], { type?: string, brand?: string, prodClass?: string }>({
-            query: ({ type, brand, prodClass }) => {
-                return {
-                    url: `/product?type=${type}&brand=${brand}&prodClass=${prodClass}`,
-                    method: 'GET',
-                };
-            },
+            query: ({ type, brand, prodClass }) => ({
+                url: `/product?type=${type}&brand=${brand}&prodClass=${prodClass}`,
+                method: 'GET',
+            }),
         }),
     }),
 });

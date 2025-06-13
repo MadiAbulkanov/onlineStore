@@ -15,8 +15,8 @@ export const ContentBlock: FC<ContentBlockProps> = ({ type, title, products }) =
       <h1 className="content-block-title">{title}</h1>
       <div className={`contents ${type}`}>
         {type === 'brands' && (
-          BRANDS_LOGO.map((logo) => (
-            <img key={logo} className="brand-logo" src={logo} alt="brand-logo" />
+          BRANDS_LOGO.map((logo, index) => (
+            <img key={index} className="brand-logo" src={logo} alt="brand-logo" />
           ))
         )}
         {type === 'products' && (
