@@ -5,6 +5,7 @@ export const storeApi = createApi({
     reducerPath: 'storeApi',
     baseQuery: fetchBaseQuery({
         baseUrl: import.meta.env.VITE_BASE_URL,
+        mode: 'cors',
     }),
     endpoints: build => ({
         getProducts: build.query<IProduct[], { type?: string, brand?: string, prodClass?: string }>({
